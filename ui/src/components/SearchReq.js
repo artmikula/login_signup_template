@@ -5,11 +5,9 @@ import { AppBar } from "@mui/material";
 import { Toolbar } from "@mui/material";
 import { Typography } from "@mui/material";
 import { Button } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 
-function SearchReq({ error, setError, setUser }) {
-  let navigate = useNavigate();
+function SearchReq({ error, setError, setUser, setPage }) {
   const [searchData, setSearchData] = useState({});
 
   const submitSearchData = () => {
@@ -21,7 +19,7 @@ function SearchReq({ error, setError, setUser }) {
     ) {
       setError(null);
       console.log("//submit data function here//");
-      navigate("/results");
+      setPage("results");
     } else {
       setError("enter all data");
     }
@@ -31,7 +29,7 @@ function SearchReq({ error, setError, setUser }) {
     console.log("logged out");
     setUser({ username: null });
     setError(null);
-    navigate("/");
+    setPage("login");
   };
 
   return (

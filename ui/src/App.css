@@ -33,3 +33,9 @@
   color: red;
   font-weight: bold;
 }
+
+.message {
+  margin: auto;
+  color: green;
+  font-weight: bold;
+}
