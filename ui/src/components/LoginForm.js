@@ -7,8 +7,10 @@ import FormControl from "@mui/material/FormControl";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-function LoginForm({ error, details, setDetails, loginUser }) {
+function LoginForm({ error, loginUser }) {
   let navigate = useNavigate();
+
+  const [details, setDetails] = useState({ username: null, password: null });
 
   const signUpUser = (e) => {
     e.preventDefault();

@@ -13,12 +13,10 @@ function App() {
   const [error, setError] = useState("");
   const [user, setUser] = useState({ username: null });
   const [resultData, setResultData] = useState(false);
-  const [pwdCheck, setPwdCheck] = useState(false);
+  const pwdCheck = null;
   const [userExists, setUserExists] = useState(false);
   let usernameExists = false;
   setPasswordValid = false;
-
-  const [details, setDetails] = useState({ username: null, password: null });
 
   const [newUserData, setNewUserData] = useState({
     username: "",
@@ -49,9 +47,9 @@ function App() {
     }
   }
 
-  async function loginUser() {
+  async function loginUser(details) {
     if (details.password && details.username) {
-      await verifyCredentials();
+      await verifyCredentials(details);
       if ((details.password = pwdCheck)) {
         setUser({
           username: details.name,
@@ -104,8 +102,6 @@ function App() {
                   setUser={setUser}
                   verifyCredentials={verifyCredentials}
                   pwdCheck={pwdCheck}
-                  details={details}
-                  setDetails={setDetails}
                   loginUser={loginUser}
                 />
               }
