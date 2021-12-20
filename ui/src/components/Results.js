@@ -1,17 +1,14 @@
 import { Container, AppBar, Toolbar, Typography, Button } from "@mui/material";
 import { Box } from "@mui/system";
-import { useNavigate } from "react-router-dom";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import MenuIcon from "@mui/icons-material/Menu";
 import PeopleIcon from "@mui/icons-material/People";
 
-function Results({ setUser }) {
-  let navigate = useNavigate();
-
+function Results({ setUser, setPage }) {
   const logout = () => {
     console.log("logged out");
     setUser({ username: null });
-    navigate("/");
+    setPage("login");
   };
 
   return (
