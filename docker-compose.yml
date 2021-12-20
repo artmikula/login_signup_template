@@ -12,10 +12,10 @@ services:
       - ~/apps/mysql_02:/var/lib/mysql
       - "./setup.sql:/docker-entrypoint-initdb.d/setup.sql"
     environment:
-      - MYSQL_PASSWORD=mypass01
-      - MYSQL_USER=user01
-      - MYSQL_DATABASE=member_db
-      - MYSQL_ROOT_PASSWORD=pswd
+      - MYSQL_PASSWORD=
+      - MYSQL_USER=
+      - MYSQL_DATABASE=
+      - MYSQL_ROOT_PASSWORD=
       - TZ="Asia/Seoul"
 
   nginx:

@@ -17,7 +17,7 @@ function SignupPage({ error, setError, setPage, setUserAdded }) {
   const cancelSignup = (e) => {
     setError(null);
     setUserAdded(null);
-    setPage("login");
+    console.log("cancel signup");
   };
 
   const signUpHandler = (e) => {
@@ -37,8 +37,8 @@ function SignupPage({ error, setError, setPage, setUserAdded }) {
       } else {
         setError(null);
         addUser();
-        setPage("login");
         setUserAdded("New user added");
+        console.log("logged in");
       }
     } else {
       setError("wrong username/password");

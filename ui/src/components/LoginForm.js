@@ -7,7 +7,14 @@ import FormControl from "@mui/material/FormControl";
 import { useState } from "react";
 import axios from "axios";
 
-function LoginForm({ error, setError, setPage, setUser, userAdded }) {
+function LoginForm({
+  error,
+  setError,
+  setPage,
+  setUser,
+  userAdded,
+  setUserAdded,
+}) {
   const [loginInfo, setLoginInfo] = useState({ username: "", password: "" });
   let pwdCheck = null;
 
@@ -16,7 +23,7 @@ function LoginForm({ error, setError, setPage, setUser, userAdded }) {
   const signUpUser = (e) => {
     e.preventDefault();
     setError(null);
-    setPage("signup");
+    console.log("signed up");
   };
 
   const loginHandler = (e) => {
@@ -33,7 +40,6 @@ function LoginForm({ error, setError, setPage, setUser, userAdded }) {
         });
         console.log("user set");
         setError(null);
-        setPage("search");
         setUserAdded(null);
       } else {
         setError("Incorrect password");
